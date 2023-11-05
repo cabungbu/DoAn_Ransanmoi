@@ -158,7 +158,14 @@ namespace RanSanMoi
         //ham va cham chet
         public void vacham()
         {
-            for (int i = 0;i < obstacle.ObstacleRec.Length; i++ )
+            for (int i = 1; i < snake.RanRec.Length; i++)
+            {
+                if (snake.RanRec[0].IntersectsWith(snake.RanRec[i]))
+                {
+                    Restart();
+                }
+            }    
+                for (int i = 0;i < obstacle.ObstacleRec.Length; i++ )
             {
                 /*if (timer1.Interval == 5)
                 {
