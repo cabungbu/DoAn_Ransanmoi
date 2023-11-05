@@ -18,33 +18,39 @@ namespace RanSanMoi
         Obstacle obstacle;
         Graphics paper;
         Snake snake = new Snake();
+        int numObstacle;
+        bool IsMovingObstacle;
         // khoi tao cac phim dieu khien ran
         Boolean trai = false, phai = false, len = false, xuong = false;
-        public Form1()
+        public Form1(int numObstacles, bool isMovingObstacles)
         {
             InitializeComponent();
             food = new Food(randFood);
             wall = new Wall();
-            obstacle = new Obstacle();
+            obstacle = new Obstacle(numObstacles);
+            numObstacle = numObstacles;
+            IsMovingObstacle = isMovingObstacles;
         }
         // hien thi do hoa tren form
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             lbtocdo1.Text =(250 - timer1.Interval).ToString();
             paper = e.Graphics;
-            obstacle.DrawObstacle(paper);
             food.DrawFood(paper);
             snake.DrawSnake(paper);
             wall.DrawWall(paper);
+            obstacle.DrawObstacle(paper);
+            
         }
         // khoi tao su kien tren ban phim
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyData ==Keys.F2)
+            if (e.KeyData == Keys.F2)            
             {
                 timer1.Enabled = true;
                 trai = false; phai = false; len = false; xuong = false;
                 label1.Text = "";
+                
             }
             if (e.KeyData == Keys.Up && xuong == false)
             {
@@ -78,6 +84,7 @@ namespace RanSanMoi
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             toolStripStatusdiem.Text = diem.ToString();
             if (xuong == true)
             {
@@ -95,22 +102,43 @@ namespace RanSanMoi
             {
                 snake.dichuyenphai();
             }
-            if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec))
+            if (numObstacle == 2)
             {
-                food.FoodLocation(randFood);
-            }
-            if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec1))
+                for (int i = 0; i < obstacle.ObstacleRec.Length; i++)
+                {
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec1[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                }
+            }    
+            if (numObstacle == 4)
             {
-                food.FoodLocation(randFood);
-            }
-            if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec2))
-            {
-                food.FoodLocation(randFood);
-            }
-            if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec3))
-            {
-                food.FoodLocation(randFood);
-            }
+                for (int i = 0; i < obstacle.ObstacleRec.Length; i++)
+                {
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec1[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec2[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                    if (food.FoodRec.IntersectsWith(obstacle.ObstacleRec3[i]))
+                    {
+                        food.FoodLocation(randFood);
+                    }
+                }
+            }    
+           
             for (int i = 0; i < snake.RanRec.Length; i++)
             {
                 if (snake.RanRec[i].IntersectsWith(food.FoodRec))
@@ -122,38 +150,50 @@ namespace RanSanMoi
                 }
             }
             vacham();
+            if (IsMovingObstacle == true)
+                obstacle.RunObstacle();
             //cap nhat lai man hinh
             this.Invalidate();
         }
         //ham va cham chet
         public void vacham()
         {
-            for (int i = 1; i < snake.RanRec.Length; i++)
+            for (int i = 0;i < obstacle.ObstacleRec.Length; i++ )
             {
-                if (timer1.Interval == 5)
+                /*if (timer1.Interval == 5)
                 {
                     MessageBox.Show("Bạn Đã Chiến Thắng");
                     snake = new Snake();
-                }
-                if (snake.RanRec[0].IntersectsWith(snake.RanRec[i]))
+                }*/
+                if (numObstacle == 2)
                 {
-                    Restart();
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec[i]))
+                    {
+                        Restart();
+                    }
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec1[i]))
+                    {
+                        Restart();
+                    }
                 }
-                if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec))
+                if (numObstacle == 4)
                 {
-                    Restart();
-                }
-                if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec1))
-                {
-                    Restart();
-                }
-                if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec2))
-                {
-                    Restart();
-                }
-                if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec3))
-                {
-                    Restart();
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec[i]))
+                    {
+                        Restart();
+                    }
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec1[i]))
+                    {
+                        Restart();
+                    }
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec2[i]))
+                    {
+                        Restart();
+                    }
+                    if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec3[i]))
+                    {
+                        Restart();
+                    }
                 }
                 if (snake.RanRec[0].X < 10 || snake.RanRec[0].X > 400)
                 {
@@ -163,7 +203,9 @@ namespace RanSanMoi
                 {
                     Restart();
                 }
-            }
+
+            }    
+           
         }
         void Restart()
         {

@@ -3,48 +3,149 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace RanSanMoi
 {
     class Obstacle
     {
-        private int x, y, x1, y1, x2, y2, x3, y3, width, height;
+        public int x;
+        public int x1;
+        public int x2;
+        public int x3;
+        public int y;
+        public int y1;
+        public int y2;
+        public int y3;
+        public Rectangle[] ObstacleRec;
+       
+        public Rectangle[] ObstacleRec1;
+        
+        public Rectangle[] ObstacleRec2;
+     
+        public Rectangle[] ObstacleRec3;
+      
         private SolidBrush brush2;
-        public Rectangle ObstacleRec;
-        public Rectangle ObstacleRec1;
-        public Rectangle ObstacleRec2;
-        public Rectangle ObstacleRec3;
-        public void DrawObstacle(Graphics paper)
+       
+        public void RunObstacle()
         {
-            width = 180;
-            height = 20;
-            ObstacleRec.X = x;
-            ObstacleRec.Y = y;
-            x = 30;
-            y = 30;
-            ObstacleRec1.X = x1;
-            ObstacleRec1.Y = y1;
-            x1 = 200;
-            y1 = 100;
-            ObstacleRec2.X = x2;
-            ObstacleRec2.Y = y2;
-            x2 = 30;
-            y2 = 200;
-            ObstacleRec3.X = x3;
-            ObstacleRec3.Y = y3;
-            x3 = 200;
-            y3 = 300;
-            ObstacleRec = new Rectangle(x, y, width, height);
-            brush2 = new SolidBrush(Color.Violet);
-            paper.FillRectangle(brush2, ObstacleRec);
-            ObstacleRec1 = new Rectangle(x1, y1, width, height);
-            paper.FillRectangle(brush2, ObstacleRec1);
-            ObstacleRec2 = new Rectangle(x2, y2, width, height);
-            paper.FillRectangle(brush2, ObstacleRec2);
-            ObstacleRec3 = new Rectangle(x3, y3, width, height);
-            paper.FillRectangle(brush2, ObstacleRec3);
+
+            for (int i = ObstacleRec.Length - 1; i >= 0; i--)
+            {
+                ObstacleRec[i].X += 20;
+                if (ObstacleRec[i].X >= 400)
+                    ObstacleRec[i].X = 400 - ObstacleRec[i].X;
+            }
+
+            for (int i = ObstacleRec1.Length - 1; i >= 0; i--)
+            {
+                ObstacleRec1[i].X += 20;
+                if (ObstacleRec1[i].X >= 400)
+                    ObstacleRec1[i].X = 400 - ObstacleRec1[i].X;
+            }
+            for (int i = ObstacleRec2.Length - 1; i >= 0; i--)
+            {
+                ObstacleRec2[i].X += 20;
+                if (ObstacleRec2[i].X >= 400)
+                    ObstacleRec2[i].X = 400 - ObstacleRec2[i].X;
+            }
+            for (int i = ObstacleRec3.Length - 1; i >= 0; i--)
+            {
+                ObstacleRec3[i].X += 20;
+                if (ObstacleRec3[i].X >= 400)
+                    ObstacleRec3[i].X = 400 - ObstacleRec3[i].X;
+            }
 
         }
+        public Obstacle(int num)
+        {
+            brush2 = new SolidBrush(Color.Violet);
+            if (num == 2)
+            {
+                ObstacleRec = new Rectangle[9];
+                ObstacleRec1 = new Rectangle[9];
+                x = 180;
+                y = 100;
+                for (int i = 0; i < ObstacleRec.Length; i++)
+                {
+                    ObstacleRec[i] = new Rectangle(x, y, 20, 20);
+                    x -= 20;
+                }
+                x1 = 350;
+                y1 = 250;
+                for (int i = 0; i < ObstacleRec1.Length; i++)
+                {
+                    ObstacleRec1[i] = new Rectangle(x1, y1, 20, 20);
+                    x1 -= 20;
+                }
+              
+            }
+            else if (num == 4)
+            {
+                ObstacleRec = new Rectangle[9];
+                ObstacleRec1 = new Rectangle[9];
+                ObstacleRec2 = new Rectangle[9];
+                ObstacleRec3 = new Rectangle[9];
+                x = 180;
+                y = 80;
+                for (int i = 0; i < ObstacleRec.Length; i++)
+                {
+                    ObstacleRec[i] = new Rectangle(x, y, 20, 20);
+                    x -= 20;
+                }
+                int x1 = 350;
+                int y1 = 180;
+                for (int i = 0; i < ObstacleRec1.Length; i++)
+                {
+                    ObstacleRec1[i] = new Rectangle(x1, y1, 20, 20);
+                    x1 -= 20;
+                }
+                int x2 = 180;
+                int y2 = 260;
+                for (int i = 0; i < ObstacleRec2.Length; i++)
+                {
+                    ObstacleRec2[i] = new Rectangle(x2, y2, 20, 20);
+                    x2 -= 20;
+                }
+                int x3 = 350;
+                int y3 = 330;
+                for (int i = 0; i < ObstacleRec3.Length; i++)
+                {
+                    ObstacleRec3[i] = new Rectangle(x3, y3, 20, 20);
+                    x3 -= 20;
+                }
+            }
+            
+        }
+        public void DrawObstacle(Graphics paper)
+        {
+           
+            if (ObstacleRec != null)
+                foreach (Rectangle rec in ObstacleRec)
+                {
+                    paper.FillRectangle(brush2, rec);
+               
+                }
+            if (ObstacleRec1 != null)
+                foreach (Rectangle rec in ObstacleRec1)
+                {
+                    paper.FillRectangle(brush2, rec);
+
+                }
+            if (ObstacleRec2 != null)
+                foreach (Rectangle rec in ObstacleRec2)
+                {
+                    paper.FillRectangle(brush2, rec);
+
+                }
+            if (ObstacleRec3 != null)
+                foreach (Rectangle rec in ObstacleRec3)
+                {
+                    paper.FillRectangle(brush2, rec);
+
+                }
+        }
+       
 
     }
 }

@@ -18,7 +18,7 @@ namespace RanSanMoi
 
         private void btde_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Form1 form = new Form1(2, false);
             form.Show();
             this.Hide();
             form.timer1.Interval = 200;
@@ -26,7 +26,7 @@ namespace RanSanMoi
 
         private void btvua_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Form1 form = new Form1(4, false);
             form.Show();
             this.Hide();
             form.timer1.Interval = 150;
@@ -34,7 +34,7 @@ namespace RanSanMoi
 
         private void btkho_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
+            Form1 form = new Form1(4, true);
             form.Show();
             this.Hide();
             form.timer1.Interval = 100;
