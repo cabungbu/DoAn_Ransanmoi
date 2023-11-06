@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace RanSanMoi
 {
@@ -18,11 +19,25 @@ namespace RanSanMoi
         Obstacle obstacle;
         Graphics paper;
         Snake snake = new Snake();
+        string usernamecurrent;
         int numObstacle;
         bool IsMovingObstacle;
         // khoi tao cac phim dieu khien ran
         Boolean trai = false, phai = false, len = false, xuong = false;
-        public Form1(int numObstacles, bool isMovingObstacles)
+        SqlConnection connection;
+        SqlCommand command;
+        string str = @"Data Source=DESKTOP-42J40F9\SQLEXPRESS;Initial Catalog=RANSANMOI;Integrated Security=True";
+        SqlDataAdapter adapter = new SqlDataAdapter();
+        DataTable table = new DataTable();
+        void loaddata()
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "select * from PLAYER";
+            adapter.SelectCommand = command;
+            table.Clear();
+            adapter.Fill(table);
+        }
+        public Form1(int numObstacles, bool isMovingObstacles, string Username)
         {
             InitializeComponent();
             food = new Food(randFood);
@@ -30,6 +45,7 @@ namespace RanSanMoi
             obstacle = new Obstacle(numObstacles);
             numObstacle = numObstacles;
             IsMovingObstacle = isMovingObstacles;
+            usernamecurrent = Username;
         }
         // hien thi do hoa tren form
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -218,11 +234,27 @@ namespace RanSanMoi
         {
             this.Close();
             timer1.Enabled = false;
-            toolStripStatusdiem.Text = "0";
-            diem = 0;
+            
+            command = connection.CreateCommand();
+            command.CommandText = "select high_score from PLAYER where username = '"+usernamecurrent+"'";
+            object result = command.ExecuteScalar();
+            int high_score = Convert.ToInt32(result);
+
+            if (diem > high_score)
+            {
+                high_score = diem;
+            }
+            command.CommandText = "update PLAYER set play_count = play_count + 1, high_score = '"+high_score+"' where username = '" + usernamecurrent + "'";
+            command.ExecuteNonQuery();
+            loaddata();
+
+            RanChet RC = new RanChet(usernamecurrent, diem);
+            RC.Show();
             label1.Text = "Nhấn F2 Để Bắt Đầu Chơi";
-            MessageBox.Show("Rắn Của Bạn Đã Chết Nhấn OK và chơi lại");
-            snake = new Snake();
+           
+            diem = 0;
+            toolStripStatusdiem.Text = "0";
+
         }
 
       
@@ -238,6 +270,9 @@ namespace RanSanMoi
         {
             timer1.Enabled = false;
             lblChuoichu.Text = "  \n****Đồ Án: Trò Chơi Rắn Săn Mồi***\nTrường ĐH Công Nghệ Thông Tin \nSinh Viên Thực Hiện 1: \nSinh viên thực hiện 2: \n+ Lớp: \nSử dụng các phím điều hướng \nDi chuyển để điều khiển rắn \nTheo hướng của phím Di chuyển \nKhéo léo điều khiển sao cho \nKhông được va vào tường và vật cản  \nVà Ăn thức ăn \n với mỗi lần ăn thức ăn \nSẽ được 10 điểm\n Và Tốc độ sẽ Tăng thêm 5km/h";
+            connection = new SqlConnection(str);
+            connection.Open();
+            loaddata();
         }
 
         private void label2_Click(object sender, EventArgs e)

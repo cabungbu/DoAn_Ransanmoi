@@ -56,7 +56,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 300;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -212,28 +212,28 @@
             this.thôngTinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(417, 36);
+            this.menuStrip1.Size = new System.Drawing.Size(417, 33);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // chơiLạiToolStripMenuItem
             // 
             this.chơiLạiToolStripMenuItem.Name = "chơiLạiToolStripMenuItem";
-            this.chơiLạiToolStripMenuItem.Size = new System.Drawing.Size(95, 32);
+            this.chơiLạiToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.chơiLạiToolStripMenuItem.Text = "Chơi Lại";
             this.chơiLạiToolStripMenuItem.Click += new System.EventHandler(this.chơiLạiToolStripMenuItem_Click);
             // 
             // hướngDẫnToolStripMenuItem
             // 
             this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
-            this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(126, 32);
+            this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(126, 29);
             this.hướngDẫnToolStripMenuItem.Text = "Hướng Dẫn";
             this.hướngDẫnToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem_Click);
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(115, 32);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(115, 29);
             this.thôngTinToolStripMenuItem.Text = "Thông Tin";
             this.thôngTinToolStripMenuItem.Click += new System.EventHandler(this.thôngTinToolStripMenuItem_Click);
             // 

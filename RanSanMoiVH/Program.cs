@@ -15,7 +15,9 @@ namespace RanSanMoi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMuc());
+            //Application.Run(new FormMuc());
+            Application.Run(new Sign());
+            //Application.Run(new Table_NguoiChoi());
         }
     }
 }

@@ -5,14 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace RanSanMoi
 {
-    public partial class FormMuc : Form
+    public partial class Table_NguoiChoi : Form
     {
-        string username;
         SqlConnection connection;
         SqlCommand command;
         string str = @"Data Source=DESKTOP-42J40F9\SQLEXPRESS;Initial Catalog=RANSANMOI;Integrated Security=True";
@@ -25,38 +25,14 @@ namespace RanSanMoi
             adapter.SelectCommand = command;
             table.Clear();
             adapter.Fill(table);
+            dataGridView1.DataSource = table;
         }
-        public FormMuc(string Username)
+        public Table_NguoiChoi()
         {
             InitializeComponent();
-            username = Username;
         }
 
-        private void btde_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1(2, false, username);
-            form.Show();
-            this.Hide();
-            form.timer1.Interval = 200;
-        }
-
-        private void btvua_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1(4, false, username);
-            form.Show();
-            this.Hide();
-            form.timer1.Interval = 150;
-        }
-
-        private void btkho_Click(object sender, EventArgs e)
-        {
-            Form1 form = new Form1(4, true, username);
-            form.Show();
-            this.Hide();
-            form.timer1.Interval = 100;
-        }
-
-        private void FormMuc_Load(object sender, EventArgs e)
+        private void Table_NguoiChoi_Load(object sender, EventArgs e)
         {
             connection = new SqlConnection(str);
             connection.Open();

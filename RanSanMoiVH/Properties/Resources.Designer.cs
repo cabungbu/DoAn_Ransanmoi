@@ -63,6 +63,26 @@ namespace RanSanMoiVH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AfterDie {
+            get {
+                object obj = ResourceManager.GetObject("AfterDie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AfterDie1 {
+            get {
+                object obj = ResourceManager.GetObject("AfterDie1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apple {
             get {
                 object obj = ResourceManager.GetObject("apple", resourceCulture);
@@ -76,6 +96,26 @@ namespace RanSanMoiVH.Properties {
         internal static System.Drawing.Bitmap Background1 {
             get {
                 object obj = ResourceManager.GetObject("Background1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background2 {
+            get {
+                object obj = ResourceManager.GetObject("background2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hand {
+            get {
+                object obj = ResourceManager.GetObject("hand", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
