@@ -96,6 +96,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(417, 651);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -112,8 +113,9 @@
             // lbtocdo1
             // 
             this.lbtocdo1.AutoSize = true;
+            this.lbtocdo1.BackColor = System.Drawing.Color.Transparent;
             this.lbtocdo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtocdo1.Location = new System.Drawing.Point(206, 586);
+            this.lbtocdo1.Location = new System.Drawing.Point(117, 539);
             this.lbtocdo1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtocdo1.Name = "lbtocdo1";
             this.lbtocdo1.Size = new System.Drawing.Size(0, 25);
@@ -242,6 +244,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackgroundImage = global::RanSanMoiVH.Properties.Resources.background3;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1041, 648);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);

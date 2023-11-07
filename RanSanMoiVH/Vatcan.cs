@@ -17,6 +17,7 @@ namespace RanSanMoi
         public int y1;
         public int y2;
         public int y3;
+
         public Rectangle[] ObstacleRec;
        
         public Rectangle[] ObstacleRec1;

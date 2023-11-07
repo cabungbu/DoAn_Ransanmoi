@@ -52,11 +52,12 @@ namespace RanSanMoi
         {
             lbtocdo1.Text =(250 - timer1.Interval).ToString();
             paper = e.Graphics;
+          
             food.DrawFood(paper);
             snake.DrawSnake(paper);
             wall.DrawWall(paper);
             obstacle.DrawObstacle(paper);
-            
+
         }
         // khoi tao su kien tren ban phim
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -165,6 +166,7 @@ namespace RanSanMoi
                     food.FoodLocation(randFood);
                 }
             }
+
             vacham();
             if (IsMovingObstacle == true)
                 obstacle.RunObstacle();
@@ -180,14 +182,10 @@ namespace RanSanMoi
                 {
                     Restart();
                 }
-            }    
-                for (int i = 0;i < obstacle.ObstacleRec.Length; i++ )
+            }
+
+            for (int i = 0; i < obstacle.ObstacleRec.Length; i++)
             {
-                /*if (timer1.Interval == 5)
-                {
-                    MessageBox.Show("Bạn Đã Chiến Thắng");
-                    snake = new Snake();
-                }*/
                 if (numObstacle == 2)
                 {
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec[i]))
@@ -218,6 +216,7 @@ namespace RanSanMoi
                         Restart();
                     }
                 }
+            
                 if (snake.RanRec[0].X < 10 || snake.RanRec[0].X > 400)
                 {
                     Restart();
@@ -276,6 +275,11 @@ namespace RanSanMoi
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
