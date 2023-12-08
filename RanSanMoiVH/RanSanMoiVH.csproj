@@ -74,6 +74,19 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2player.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2player.Designer.cs">
+      <DependentUpon>Form2player.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ran2.cs" />
     <Compile Include="RanChet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2player.resx">
+      <DependentUpon>Form2player.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHuongdan.resx">
       <DependentUpon>FormHuongdan.cs</DependentUpon>
@@ -184,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\endSnake.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

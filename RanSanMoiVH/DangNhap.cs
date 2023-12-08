@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using RanSanMoi;
+using RanSanMoiVH;
 
 namespace RanSanMoi
 {
     public partial class DangNhap : Form
     {
+        private Form2player form;
         SqlConnection connection;
         SqlCommand command;
         string str = @"Data Source=DESKTOP-42J40F9\SQLEXPRESS;Initial Catalog=RANSANMOI;Integrated Security=True";
@@ -52,8 +54,8 @@ namespace RanSanMoi
             {
                 reader.Close();
                 // Đăng nhập thành công
-                FormMuc form1 = new FormMuc(username);
-                form1.Show();
+                form = new Form2player(username);
+                form.Show();
                 this.Hide();
             }
             else

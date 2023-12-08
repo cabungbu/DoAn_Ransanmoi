@@ -46,8 +46,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1056, 468);
             this.Controls.Add(this.dataGridView1);
+            this.ForeColor = System.Drawing.Color.IndianRed;
             this.Name = "Table_NguoiChoi";
             this.Text = "Table_NguoiChoi";
             this.Load += new System.EventHandler(this.Table_NguoiChoi_Load);

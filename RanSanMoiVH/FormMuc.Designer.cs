@@ -37,36 +37,36 @@
             // btde
             // 
             this.btde.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.btde.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btde.Location = new System.Drawing.Point(90, 471);
+            this.btde.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btde.Location = new System.Drawing.Point(134, 556);
             this.btde.Name = "btde";
             this.btde.Size = new System.Drawing.Size(148, 55);
             this.btde.TabIndex = 2;
-            this.btde.Text = "Dễ";
+            this.btde.Text = "Easy";
             this.btde.UseVisualStyleBackColor = true;
             this.btde.Click += new System.EventHandler(this.btde_Click);
             // 
             // btvua
             // 
             this.btvua.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.btvua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btvua.Location = new System.Drawing.Point(357, 471);
+            this.btvua.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvua.Location = new System.Drawing.Point(451, 556);
             this.btvua.Name = "btvua";
-            this.btvua.Size = new System.Drawing.Size(148, 55);
+            this.btvua.Size = new System.Drawing.Size(187, 55);
             this.btvua.TabIndex = 3;
-            this.btvua.Text = "Vừa";
+            this.btvua.Text = "Medium";
             this.btvua.UseVisualStyleBackColor = true;
             this.btvua.Click += new System.EventHandler(this.btvua_Click);
             // 
             // btkho
             // 
             this.btkho.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.btkho.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btkho.Location = new System.Drawing.Point(617, 471);
+            this.btkho.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btkho.Location = new System.Drawing.Point(790, 556);
             this.btkho.Name = "btkho";
             this.btkho.Size = new System.Drawing.Size(148, 55);
             this.btkho.TabIndex = 4;
-            this.btkho.Text = "Khó";
+            this.btkho.Text = "Hard";
             this.btkho.UseVisualStyleBackColor = true;
             this.btkho.Click += new System.EventHandler(this.btkho_Click);
             // 
@@ -77,7 +77,7 @@
             this.BackColor = System.Drawing.Color.LimeGreen;
             this.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Background1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(875, 556);
+            this.ClientSize = new System.Drawing.Size(1041, 648);
             this.Controls.Add(this.btkho);
             this.Controls.Add(this.btvua);
             this.Controls.Add(this.btde);

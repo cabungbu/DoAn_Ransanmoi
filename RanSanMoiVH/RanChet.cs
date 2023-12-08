@@ -47,21 +47,34 @@ namespace RanSanMoi
 
         private void RanChet_Load(object sender, EventArgs e)
         {
+           
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();
             command = connection.CreateCommand();
-            command.CommandText = "select high_score from PLAYER where username = '" +usernamecurrent+ "'";
-            object result = command.ExecuteScalar();
-            int high_score = Convert.ToInt32(result);
+
+            command.CommandText = "select Max_De from PLAYER where username = '" +usernamecurrent+ "'";
+            object resultDe = command.ExecuteScalar();
+            int high_score_de = Convert.ToInt32(resultDe);
+
+            command.CommandText = "select Max_Vua from PLAYER where username = '" + usernamecurrent + "'";
+            object resultVua = command.ExecuteScalar();
+            int high_score_vua = Convert.ToInt32(resultVua);
+
+            command.CommandText = "select Max_Kho from PLAYER where username = '" + usernamecurrent + "'";
+            object resultKho = command.ExecuteScalar();
+            int high_score_Kho = Convert.ToInt32(resultKho);
+
             command.CommandText = "select play_count from PLAYER where username = '" + usernamecurrent + "'";
             object result1 = command.ExecuteScalar();
             int play_count = Convert.ToInt32(result1);
+
             label4.Text = usernamecurrent;
             label5.Text = diemcurrent.ToString();
-            label6.Text = high_score.ToString();
+            label6.Text = high_score_de.ToString();
+            label11.Text = high_score_vua.ToString();
+            label12.Text = high_score_Kho.ToString();
             label8.Text = play_count.ToString();
-
 
         }
     }

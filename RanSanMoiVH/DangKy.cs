@@ -44,6 +44,7 @@ namespace RanSanMoi
         private void button5_Click(object sender, EventArgs e)
         {
             command = connection.CreateCommand();
+
             command.CommandText = "insert into PLAYER values('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + comboBox1.Text + "', '" + 0 + "', '" + 0 + "')";
             command.ExecuteNonQuery();
             loaddata();

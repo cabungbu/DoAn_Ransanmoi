@@ -181,6 +181,7 @@ namespace RanSanMoi
                 if (snake.RanRec[0].IntersectsWith(snake.RanRec[i]))
                 {
                     Restart();
+                    return;
                 }
             }
 
@@ -191,39 +192,47 @@ namespace RanSanMoi
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec[i]))
                     {
                         Restart();
+                        return;
                     }
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec1[i]))
                     {
                         Restart();
+                        return;
                     }
                 }
-                if (numObstacle == 4)
+                else if (numObstacle == 4)
                 {
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec[i]))
                     {
                         Restart();
+                        return;
                     }
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec1[i]))
                     {
                         Restart();
+                        return;
                     }
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec2[i]))
                     {
                         Restart();
+                        return;
                     }
                     if (snake.RanRec[0].IntersectsWith(obstacle.ObstacleRec3[i]))
                     {
                         Restart();
+                        return;
                     }
                 }
             
                 if (snake.RanRec[0].X < 10 || snake.RanRec[0].X > 400)
                 {
                     Restart();
+                    return;
                 }
                 if (snake.RanRec[0].Y < 10 || snake.RanRec[0].Y > 400)
                 {
                     Restart();
+                    return;
                 }
 
             }    
@@ -235,22 +244,51 @@ namespace RanSanMoi
             timer1.Enabled = false;
             
             command = connection.CreateCommand();
-            command.CommandText = "select high_score from PLAYER where username = '"+usernamecurrent+"'";
-            object result = command.ExecuteScalar();
-            int high_score = Convert.ToInt32(result);
-
-            if (diem > high_score)
+            if (numObstacle == 2)
             {
-                high_score = diem;
-            }
-            command.CommandText = "update PLAYER set play_count = play_count + 1, high_score = '"+high_score+"' where username = '" + usernamecurrent + "'";
-            command.ExecuteNonQuery();
-            loaddata();
+                command.CommandText = "select Max_De from PLAYER where username = '" + usernamecurrent + "'";
+                object result = command.ExecuteScalar();
+                int high_score = Convert.ToInt32(result);
 
+                if (diem > high_score)
+                {
+                    high_score = diem;
+                }
+                command.CommandText = "update PLAYER set play_count = play_count + 1, Max_De = '" + high_score + "' where username = '" + usernamecurrent + "'";
+                command.ExecuteNonQuery();
+                loaddata();
+            }
+            else if (numObstacle == 4 && IsMovingObstacle == false)
+            {
+                command.CommandText = "select Max_Vua from PLAYER where username = '" + usernamecurrent + "'";
+                object result = command.ExecuteScalar();
+                int high_score = Convert.ToInt32(result);
+
+                if (diem > high_score)
+                {
+                    high_score = diem;
+                }
+                command.CommandText = "update PLAYER set play_count = play_count + 1, Max_Vua = '" + high_score + "' where username = '" + usernamecurrent + "'";
+                command.ExecuteNonQuery();
+                loaddata();
+            }
+            else if (numObstacle == 4 && IsMovingObstacle == true)
+            {
+                command.CommandText = "select Max_Kho from PLAYER where username = '" + usernamecurrent + "'";
+                object result = command.ExecuteScalar();
+                int high_score = Convert.ToInt32(result);
+
+                if (diem > high_score)
+                {
+                    high_score = diem;
+                }
+                command.CommandText = "update PLAYER set play_count = play_count + 1, Max_Kho = '" + high_score + "' where username = '" + usernamecurrent + "'";
+                command.ExecuteNonQuery();
+                loaddata();
+            }
             RanChet RC = new RanChet(usernamecurrent, diem);
             RC.Show();
             label1.Text = "Nhấn F2 Để Bắt Đầu Chơi";
-           
             diem = 0;
             toolStripStatusdiem.Text = "0";
 

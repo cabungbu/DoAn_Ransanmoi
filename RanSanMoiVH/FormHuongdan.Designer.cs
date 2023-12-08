@@ -135,7 +135,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormHuongdan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Huongdan";
+            this.Text = "Hướng dẫn";
             this.Load += new System.EventHandler(this.FormHuongdan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
