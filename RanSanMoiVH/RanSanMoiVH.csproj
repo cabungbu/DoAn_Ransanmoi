@@ -270,6 +270,10 @@
     <EmbeddedResource Include="Resources\obstacle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Resources\trai.png" />
+    <None Include="Resources\hehe.png" />
+    <None Include="Resources\Chutron %282%29.png" />
+    <None Include="Resources\phai.png" />
     <Content Include="Sound\game_over.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

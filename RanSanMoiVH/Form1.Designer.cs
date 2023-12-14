@@ -44,9 +44,9 @@
             this.pnchuchay = new System.Windows.Forms.Panel();
             this.lblChuoichu = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.chơiLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hướngDẫnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChoiLaiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kethucToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.statusdiem.SuspendLayout();
             this.pnchuchay.SuspendLayout();
@@ -211,39 +211,39 @@
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.chơiLạiToolStripMenuItem,
-            this.hướngDẫnToolStripMenuItem,
-            this.thôngTinToolStripMenuItem});
+            this.ToolStripMenuItem,
+            this.ChoiLaiToolStripMenuItem,
+            this.kethucToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(417, 38);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // chơiLạiToolStripMenuItem
+            // ToolStripMenuItem
             // 
-            this.chơiLạiToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chơiLạiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chơiLạiToolStripMenuItem.Name = "chơiLạiToolStripMenuItem";
-            this.chơiLạiToolStripMenuItem.Size = new System.Drawing.Size(111, 34);
-            this.chơiLạiToolStripMenuItem.Text = "Chơi Lại";
-            this.chơiLạiToolStripMenuItem.Click += new System.EventHandler(this.chơiLạiToolStripMenuItem_Click);
+            this.ToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolStripMenuItem.Name = "ToolStripMenuItem";
+            this.ToolStripMenuItem.Size = new System.Drawing.Size(136, 34);
+            this.ToolStripMenuItem.Text = "Tạm dừng";
+            this.ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click_1);
             // 
-            // hướngDẫnToolStripMenuItem
+            // ChoiLaiToolStripMenuItem
             // 
-            this.hướngDẫnToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
-            this.hướngDẫnToolStripMenuItem.Size = new System.Drawing.Size(149, 34);
-            this.hướngDẫnToolStripMenuItem.Text = "Hướng Dẫn";
-            this.hướngDẫnToolStripMenuItem.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem_Click);
+            this.ChoiLaiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChoiLaiToolStripMenuItem.Name = "ChoiLaiToolStripMenuItem";
+            this.ChoiLaiToolStripMenuItem.Size = new System.Drawing.Size(106, 34);
+            this.ChoiLaiToolStripMenuItem.Text = "Chơi lại";
+            this.ChoiLaiToolStripMenuItem.Click += new System.EventHandler(this.ChoiLaiToolStripMenuItem_Click);
             // 
-            // thôngTinToolStripMenuItem
+            // kethucToolStripMenuItem
             // 
-            this.thôngTinToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(133, 34);
-            this.thôngTinToolStripMenuItem.Text = "Thông Tin";
-            this.thôngTinToolStripMenuItem.Click += new System.EventHandler(this.thôngTinToolStripMenuItem_Click);
+            this.kethucToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kethucToolStripMenuItem.Name = "kethucToolStripMenuItem";
+            this.kethucToolStripMenuItem.Size = new System.Drawing.Size(116, 34);
+            this.kethucToolStripMenuItem.Text = "Kết thúc";
+            this.kethucToolStripMenuItem.Click += new System.EventHandler(this.kethucToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -286,9 +286,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem chơiLạiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hướngDẫnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ChoiLaiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kethucToolStripMenuItem;
         private System.Windows.Forms.Timer timerchuchay;
         private System.Windows.Forms.Panel pnchuchay;
         private System.Windows.Forms.Label lblChuoichu;

@@ -321,6 +321,30 @@ namespace RanSanMoi
             loaddata();
         }
 
+        private void ToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+                timer1.Enabled = false;
+            else
+                timer1.Enabled = true;
+        }
+
+        private void ChoiLaiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            label1.Text = "Nhấn F2 để bắt đầu chơi";
+            diem = 0;
+            toolStripStatusdiem.Text = "0";
+            snake = new Snake();
+            Invalidate();
+            trai = phai = len = xuong = false;
+        }
+
+        private void kethucToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restart();
+        }
+
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -331,7 +355,7 @@ namespace RanSanMoi
 
         }
 
-        private void chơiLạiToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             timer1.Enabled = false;
             label1.Text = "Nhấn F2 Để Bắt Đầu Chơi";
@@ -342,17 +366,7 @@ namespace RanSanMoi
             Invalidate();
         }
 
-        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormThongTin form = new FormThongTin();
-            form.Show();
-        }
-
-        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormHuongdan form = new FormHuongdan();
-            form.Show();
-        }
+       
    }
 
 }

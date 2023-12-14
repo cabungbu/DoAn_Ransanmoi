@@ -35,16 +35,16 @@
             this.toolStripDiem2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDiem1 = new System.Windows.Forms.ToolStripLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.tạmDừngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chơiLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kếtThúcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label5 = new System.Windows.Forms.Label();
             this.lbtocdo1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.tạmDừngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chơiLạiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kếtThúcToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -122,6 +122,55 @@
             this.toolStripDiem1.Size = new System.Drawing.Size(26, 30);
             this.toolStripDiem1.Text = "0";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tạmDừngToolStripMenuItem,
+            this.chơiLạiToolStripMenuItem,
+            this.kếtThúcToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(417, 38);
+            this.menuStrip1.TabIndex = 13;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // tạmDừngToolStripMenuItem
+            // 
+            this.tạmDừngToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.tạmDừngToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tạmDừngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tạmDừngToolStripMenuItem.Name = "tạmDừngToolStripMenuItem";
+            this.tạmDừngToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.tạmDừngToolStripMenuItem.Size = new System.Drawing.Size(136, 34);
+            this.tạmDừngToolStripMenuItem.Text = "Tạm dừng";
+            this.tạmDừngToolStripMenuItem.Click += new System.EventHandler(this.tạmDừngToolStripMenuItem_Click);
+            // 
+            // chơiLạiToolStripMenuItem
+            // 
+            this.chơiLạiToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.chơiLạiToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.chơiLạiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chơiLạiToolStripMenuItem.Name = "chơiLạiToolStripMenuItem";
+            this.chơiLạiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.chơiLạiToolStripMenuItem.Size = new System.Drawing.Size(106, 34);
+            this.chơiLạiToolStripMenuItem.Text = "Chơi lại";
+            this.chơiLạiToolStripMenuItem.Click += new System.EventHandler(this.chơiLạiToolStripMenuItem_Click);
+            // 
+            // kếtThúcToolStripMenuItem
+            // 
+            this.kếtThúcToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.kếtThúcToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kếtThúcToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
+            this.kếtThúcToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(116, 34);
+            this.kếtThúcToolStripMenuItem.Text = "Kết thúc";
+            this.kếtThúcToolStripMenuItem.Click += new System.EventHandler(this.kếtThúcToolStripMenuItem_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -181,56 +230,6 @@
             this.label3.Size = new System.Drawing.Size(360, 33);
             this.label3.TabIndex = 1;
             this.label3.Text = "Nhấn F2 để bắt đầu chơi";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tạmDừngToolStripMenuItem,
-            this.chơiLạiToolStripMenuItem,
-            this.kếtThúcToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(417, 38);
-            this.menuStrip1.TabIndex = 13;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // tạmDừngToolStripMenuItem
-            // 
-            this.tạmDừngToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.tạmDừngToolStripMenuItem.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.tạmDừngToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tạmDừngToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tạmDừngToolStripMenuItem.Name = "tạmDừngToolStripMenuItem";
-            this.tạmDừngToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.tạmDừngToolStripMenuItem.Size = new System.Drawing.Size(136, 34);
-            this.tạmDừngToolStripMenuItem.Text = "Tạm dừng";
-            this.tạmDừngToolStripMenuItem.Click += new System.EventHandler(this.tạmDừngToolStripMenuItem_Click);
-            // 
-            // chơiLạiToolStripMenuItem
-            // 
-            this.chơiLạiToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.chơiLạiToolStripMenuItem.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.chơiLạiToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.chơiLạiToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chơiLạiToolStripMenuItem.Name = "chơiLạiToolStripMenuItem";
-            this.chơiLạiToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.chơiLạiToolStripMenuItem.Size = new System.Drawing.Size(106, 34);
-            this.chơiLạiToolStripMenuItem.Text = "Chơi lại";
-            this.chơiLạiToolStripMenuItem.Click += new System.EventHandler(this.chơiLạiToolStripMenuItem_Click);
-            // 
-            // kếtThúcToolStripMenuItem
-            // 
-            this.kếtThúcToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.kếtThúcToolStripMenuItem.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
-            this.kếtThúcToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kếtThúcToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kếtThúcToolStripMenuItem.Name = "kếtThúcToolStripMenuItem";
-            this.kếtThúcToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.kếtThúcToolStripMenuItem.Size = new System.Drawing.Size(116, 34);
-            this.kếtThúcToolStripMenuItem.Text = "Kết thúc";
-            this.kếtThúcToolStripMenuItem.Click += new System.EventHandler(this.kếtThúcToolStripMenuItem_Click);
             // 
             // Form3
             // 

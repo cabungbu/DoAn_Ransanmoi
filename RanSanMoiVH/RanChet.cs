@@ -77,5 +77,12 @@ namespace RanSanMoi
             label8.Text = play_count.ToString();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sign form = new Sign();
+            form.Show();
+            this.Close();
+        }
     }
 }

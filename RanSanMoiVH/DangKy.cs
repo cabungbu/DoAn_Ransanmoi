@@ -34,7 +34,7 @@ namespace RanSanMoi
 
         private void DangKy_Load(object sender, EventArgs e)
         {
-            button2.Text = "Password";
+            label2.Text = "Password";
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();
@@ -51,6 +51,20 @@ namespace RanSanMoi
             FormMuc form1 = new FormMuc(textBox1.Text);
             form1.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sign sign = new Sign();
+            sign.Show();
+            this.Close();
         }
     }
 }

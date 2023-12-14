@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RanSanMoi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,14 @@ namespace RanSanMoiVH
     {
         string name1, name2;
         int diem1, diem2;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sign form = new Sign();
+            form.Show();
+            this.Close();
+        }
+
         public Form4(string u1, string u2, int d1, int d2)
         {
             InitializeComponent();
