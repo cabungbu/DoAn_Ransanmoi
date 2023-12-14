@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
@@ -241,9 +242,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Game Rắn săn mồi";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form3_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form3_KeyDown);

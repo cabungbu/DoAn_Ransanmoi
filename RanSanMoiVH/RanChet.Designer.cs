@@ -183,9 +183,9 @@
             this.button1.BackgroundImage = global::RanSanMoiVH.Properties.Resources.Screenshot_2023_11_04_002533;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Location = new System.Drawing.Point(102, 562);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 43);
+            this.button1.Size = new System.Drawing.Size(155, 59);
             this.button1.TabIndex = 12;
             this.button1.Text = "LOG OUT";
             this.button1.UseVisualStyleBackColor = true;
