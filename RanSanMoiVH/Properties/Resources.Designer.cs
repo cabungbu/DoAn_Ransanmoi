@@ -63,6 +63,16 @@ namespace RanSanMoiVH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap af4ef5b4_4c0f_42d8_9386_a3475a2481b9 {
+            get {
+                object obj = ResourceManager.GetObject("af4ef5b4-4c0f-42d8-9386-a3475a2481b9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AfterDie {
             get {
                 object obj = ResourceManager.GetObject("AfterDie", resourceCulture);
@@ -123,6 +133,36 @@ namespace RanSanMoiVH.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btp {
+            get {
+                object obj = ResourceManager.GetObject("btp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ButtonPlay {
+            get {
+                object obj = ResourceManager.GetObject("ButtonPlay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Chu {
+            get {
+                object obj = ResourceManager.GetObject("Chu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap endSnake {
             get {
                 object obj = ResourceManager.GetObject("endSnake", resourceCulture);
@@ -136,6 +176,16 @@ namespace RanSanMoiVH.Properties {
         internal static System.Drawing.Bitmap hand {
             get {
                 object obj = ResourceManager.GetObject("hand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lovepik_com_401044690_board {
+            get {
+                object obj = ResourceManager.GetObject("Lovepik_com-401044690-board", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

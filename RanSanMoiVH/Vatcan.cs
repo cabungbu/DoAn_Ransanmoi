@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
+using System.Reflection;
 
 namespace RanSanMoi
 {
@@ -27,7 +29,7 @@ namespace RanSanMoi
         public Rectangle[] ObstacleRec3;
       
         private SolidBrush brush2;
-       
+        public System.Drawing.Image glass;
         public void RunObstacle()
         {
 
@@ -35,32 +37,40 @@ namespace RanSanMoi
             {
                 ObstacleRec[i].X += 20;
                 if (ObstacleRec[i].X >= 400)
-                    ObstacleRec[i].X = 400 - ObstacleRec[i].X;
+                    ObstacleRec[i].X = 410 - ObstacleRec[i].X;
             }
 
             for (int i = ObstacleRec1.Length - 1; i >= 0; i--)
             {
                 ObstacleRec1[i].X += 20;
                 if (ObstacleRec1[i].X >= 400)
-                    ObstacleRec1[i].X = 400 - ObstacleRec1[i].X;
+                    ObstacleRec1[i].X = 410 - ObstacleRec1[i].X;
             }
             for (int i = ObstacleRec2.Length - 1; i >= 0; i--)
             {
                 ObstacleRec2[i].X += 20;
                 if (ObstacleRec2[i].X >= 400)
-                    ObstacleRec2[i].X = 400 - ObstacleRec2[i].X;
+                    ObstacleRec2[i].X = 410 - ObstacleRec2[i].X;
             }
             for (int i = ObstacleRec3.Length - 1; i >= 0; i--)
             {
                 ObstacleRec3[i].X += 20;
                 if (ObstacleRec3[i].X >= 400)
-                    ObstacleRec3[i].X = 400 - ObstacleRec3[i].X;
+                    ObstacleRec3[i].X = 410 - ObstacleRec3[i].X;
             }
 
         }
         public Obstacle(int num)
         {
             brush2 = new SolidBrush(Color.Violet);
+            string resourceName = "RanSanMoiVH.Resources.obstacle.png";
+
+            // Lấy luồng dữ liệu của tài nguyên nhúng
+            using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+            {
+                // Tạo một đối tượng hình ảnh từ luồng dữ liệu
+                glass = System.Drawing.Image.FromStream(stream);
+            }
             if (num == 2)
             {
                 ObstacleRec = new Rectangle[9];
@@ -124,25 +134,26 @@ namespace RanSanMoi
             if (ObstacleRec != null)
                 foreach (Rectangle rec in ObstacleRec)
                 {
-                    paper.FillRectangle(brush2, rec);
-               
+                    paper.DrawImage(glass, rec);
+
+
                 }
             if (ObstacleRec1 != null)
                 foreach (Rectangle rec in ObstacleRec1)
                 {
-                    paper.FillRectangle(brush2, rec);
+                    paper.DrawImage(glass, rec);
 
                 }
             if (ObstacleRec2 != null)
                 foreach (Rectangle rec in ObstacleRec2)
                 {
-                    paper.FillRectangle(brush2, rec);
+                    paper.DrawImage(glass, rec);
 
                 }
             if (ObstacleRec3 != null)
                 foreach (Rectangle rec in ObstacleRec3)
                 {
-                    paper.FillRectangle(brush2, rec);
+                    paper.DrawImage(glass, rec);
 
                 }
         }

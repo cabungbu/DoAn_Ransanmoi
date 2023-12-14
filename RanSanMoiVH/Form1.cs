@@ -7,11 +7,17 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Media;
+using RanSanMoiVH;
 
 namespace RanSanMoi
 {
     public partial class Form1 : Form
     {
+        string soundFood = "Sound/Snake_Sounds_eat.wav";
+        string soundDie = "Sound/game_over.wav";
+        SoundPlayer soundeatfood;
+        SoundPlayer soundChet;
         int diem = 0;
         Random randFood = new Random();
         Food food;
@@ -46,6 +52,8 @@ namespace RanSanMoi
             numObstacle = numObstacles;
             IsMovingObstacle = isMovingObstacles;
             usernamecurrent = Username;
+            soundeatfood = new SoundPlayer(soundFood);
+            soundChet = new SoundPlayer(soundDie);
         }
         // hien thi do hoa tren form
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -164,6 +172,7 @@ namespace RanSanMoi
                     diem += 10;
                     snake.GrowSnake();
                     food.FoodLocation(randFood);
+                    soundeatfood.Play();
                 }
             }
 
@@ -242,7 +251,7 @@ namespace RanSanMoi
         {
             this.Close();
             timer1.Enabled = false;
-            
+            soundChet.Play();
             command = connection.CreateCommand();
             if (numObstacle == 2)
             {
@@ -324,10 +333,13 @@ namespace RanSanMoi
 
         private void chơiLạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            timer1.Enabled = false;
+            label1.Text = "Nhấn F2 Để Bắt Đầu Chơi";
+            snake = new Snake();
+            trai = phai = len = xuong = false;
             toolStripStatusdiem.Text = "0";
             diem = 0;
-            snake = new Snake();
+            Invalidate();
         }
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)

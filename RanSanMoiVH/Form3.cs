@@ -9,11 +9,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace RanSanMoiVH
 {
     public partial class Form3 : Form
     {
+
+        string soundFood = "Sound/Snake_Sounds_eat.wav";
+        string soundDie = "Sound/game_over.wav";
+        SoundPlayer soundeatfood;
+        SoundPlayer soundChet;
+        string ten1, ten2;
         int diem1 = 0;
         int diem2 = 0;
         Random randFood = new Random();
@@ -88,6 +95,7 @@ namespace RanSanMoiVH
             {
                 if (snake1.RanRec[i].IntersectsWith(food.FoodRec))
                 {
+                    soundeatfood.Play();
                     timer1.Interval -= 5;
                     diem1 += 10;
                     snake1.GrowSnake();
@@ -99,6 +107,7 @@ namespace RanSanMoiVH
             {
                 if (snake2.RanRec[i].IntersectsWith(food.FoodRec))
                 {
+                    soundeatfood.Play();
                     timer1.Interval -= 5;
                     diem2 += 10;
                     snake2.GrowSnake();
@@ -107,6 +116,34 @@ namespace RanSanMoiVH
             }
             vacham();
             this.Invalidate();
+        }
+
+        private void tạmDừngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+                timer1.Enabled = false;
+            else 
+                timer1.Enabled = true;
+        }
+
+        private void chơiLạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            label3.Text = "Nhấn F2 Để Bắt Đầu Chơi";
+            diem1 = 0;
+            diem2 = 0;
+            toolStripDiem1.Text = "0";
+            toolStripDiem2.Text = "0";
+            snake1 = new Snake();
+            snake2 = new Ran2();
+            Invalidate();
+            trai = phai = len = xuong = false;
+            trai2 = phai2 = len2 = xuong2 = false;
+        }
+
+        private void kếtThúcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restart();
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -212,11 +249,12 @@ namespace RanSanMoiVH
         }
         void Restart()
         {
+            soundChet.Play();
             this.Close();
             timer1.Enabled = false;
-
-            MessageBox.Show("Diem ran 1: " + diem1.ToString()+ " diem ran 2: "+ diem2.ToString());
-            label1.Text = "Nhấn F2 Để Bắt Đầu Chơi";
+            Form4 f4 = new Form4(ten1, ten2, diem1, diem2);
+            f4.Show();
+            label3.Text = "Nhấn F2 Để Bắt Đầu Chơi";
             diem1 = 0;
             diem2 = 0;
             toolStripDiem1.Text = "0";
@@ -304,17 +342,23 @@ namespace RanSanMoiVH
             obstacle.DrawObstacle(paper);
         }
 
-        public Form3()
+        public Form3(string u1, string u2)
         {
             InitializeComponent();
             food = new Food(randFood);
             wall = new Wall();
             obstacle = new Obstacle(4);
+            ten1 = u1;
+            ten2 = u2;
+            soundeatfood = new SoundPlayer(soundFood);
+            soundChet = new SoundPlayer(soundDie);
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
+            label1.Text = ten1;
+            label2.Text = ten2;
         }
     }
 }
