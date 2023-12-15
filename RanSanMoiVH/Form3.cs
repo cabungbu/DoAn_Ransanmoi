@@ -20,7 +20,7 @@ namespace RanSanMoiVH
         string soundDie = "Sound/game_over.wav";
         SoundPlayer soundeatfood;
         SoundPlayer soundChet;
-        string ten1, ten2;
+        string ten1, ten2, usn;
         int diem1 = 0;
         int diem2 = 0;
         Random randFood = new Random();
@@ -146,6 +146,11 @@ namespace RanSanMoiVH
             Restart();
         }
 
+        private void lbtocdo1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
@@ -252,7 +257,7 @@ namespace RanSanMoiVH
             soundChet.Play();
             this.Close();
             timer1.Enabled = false;
-            Form4 f4 = new Form4(ten1, ten2, diem1, diem2);
+            Form4 f4 = new Form4(ten1, ten2, diem1, diem2, usn);
             f4.Show();
             label3.Text = "Nhấn F2 Để Bắt Đầu Chơi";
             diem1 = 0;
@@ -342,7 +347,7 @@ namespace RanSanMoiVH
             obstacle.DrawObstacle(paper);
         }
 
-        public Form3(string u1, string u2)
+        public Form3(string u1, string u2, string username)
         {
             InitializeComponent();
             food = new Food(randFood);
@@ -350,6 +355,7 @@ namespace RanSanMoiVH
             obstacle = new Obstacle(4);
             ten1 = u1;
             ten2 = u2;
+            usn = username;
             soundeatfood = new SoundPlayer(soundFood);
             soundChet = new SoundPlayer(soundDie);
         }

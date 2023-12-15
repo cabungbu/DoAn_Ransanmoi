@@ -315,7 +315,7 @@ namespace RanSanMoi
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Enabled = false;
-            lblChuoichu.Text = "  \n****Đồ Án: Trò Chơi Rắn Săn Mồi***\nTrường ĐH Công Nghệ Thông Tin \nSinh Viên Thực Hiện 1: \nSinh viên thực hiện 2: \n+ Lớp: \nSử dụng các phím điều hướng \nDi chuyển để điều khiển rắn \nTheo hướng của phím Di chuyển \nKhéo léo điều khiển sao cho \nKhông được va vào tường và vật cản  \nVà Ăn thức ăn \n với mỗi lần ăn thức ăn \nSẽ được 10 điểm\n Và Tốc độ sẽ Tăng thêm 5km/h";
+            lblChuoichu.Text = "  \n****Đồ Án: Trò Chơi Rắn Săn \nMồi***\nTrường ĐH Công Nghệ Thông \nTin\nSử dụng các phím điều hướng \nDi chuyển để điều khiển rắn \nTheo hướng của phím Di \nchuyển Khéo léo điều khiển \nsao cho Không được va vào\ntường và vật cản Và Ăn thức\năn với mỗi lần ăn thức ăn sẽ \nđược 10 điểm Và Tốc độ sẽ\nTăng thêm 5km/h";
             connection = new SqlConnection(str);
             connection.Open();
             loaddata();

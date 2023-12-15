@@ -34,7 +34,7 @@ namespace RanSanMoiVH
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FormDienTen fdt = new FormDienTen();
+            FormDienTen fdt = new FormDienTen(playerName);
             fdt.Show();
             this.Close();
         }

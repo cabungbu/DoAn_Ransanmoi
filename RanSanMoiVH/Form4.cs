@@ -13,8 +13,15 @@ namespace RanSanMoiVH
 {
     public partial class Form4 : Form
     {
-        string name1, name2;
+        string name1, name2, usn;
         int diem1, diem2;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2player form = new Form2player(usn);
+            form.Show();
+            this.Close();
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -23,13 +30,14 @@ namespace RanSanMoiVH
             this.Close();
         }
 
-        public Form4(string u1, string u2, int d1, int d2)
+        public Form4(string u1, string u2, int d1, int d2, string username)
         {
             InitializeComponent();
             name1 = u1;
             name2 = u2; 
             diem1 = d1;
             diem2 = d2;
+            usn = username;
         }
 
         private void Form4_Load(object sender, EventArgs e)

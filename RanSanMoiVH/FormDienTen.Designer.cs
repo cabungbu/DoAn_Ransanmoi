@@ -169,6 +169,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDienTen";
             this.Text = "Thông tin ";
+            this.Load += new System.EventHandler(this.FormDienTen_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

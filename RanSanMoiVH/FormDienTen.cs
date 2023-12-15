@@ -12,9 +12,11 @@ namespace RanSanMoiVH
 {
     public partial class FormDienTen : Form
     {
-        public FormDienTen()
+        string usn;
+        public FormDienTen(string username)
         {
             InitializeComponent();
+            usn = username;
         }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
@@ -24,9 +26,14 @@ namespace RanSanMoiVH
 
         private void panel4_Click(object sender, EventArgs e)
         {
-            Form3 f3 = new Form3(textBox1.Text, textBox3.Text);
+            Form3 f3 = new Form3(textBox1.Text, textBox3.Text, usn);
             f3.Show();
             this.Close();
+        }
+
+        private void FormDienTen_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

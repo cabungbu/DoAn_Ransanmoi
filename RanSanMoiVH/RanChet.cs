@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using RanSanMoiVH;
 
 namespace RanSanMoi
 {
@@ -81,6 +82,13 @@ namespace RanSanMoi
         private void button1_Click(object sender, EventArgs e)
         {
             Sign form = new Sign();
+            form.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2player form = new Form2player(usernamecurrent);
             form.Show();
             this.Close();
         }
