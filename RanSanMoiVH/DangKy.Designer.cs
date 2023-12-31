@@ -51,6 +51,26 @@
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
+            // button1
+            // 
+            button1.AllowDrop = true;
+            button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button1.BackgroundImage = global::RanSanMoiVH.Properties.Resources.trai;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button1.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            button1.Location = new System.Drawing.Point(86, 551);
+            button1.Name = "button1";
+            button1.Size = new System.Drawing.Size(253, 65);
+            button1.TabIndex = 17;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // textBox1
             // 
             this.textBox1.AllowDrop = true;
@@ -97,6 +117,8 @@
             this.button5.BackgroundImage = global::RanSanMoiVH.Properties.Resources.phai;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(713, 551);
@@ -106,6 +128,7 @@
             this.button5.Text = "Create Account";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             // 
             // label1
             // 
@@ -205,24 +228,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(432, 231);
             this.flowLayoutPanel1.TabIndex = 16;
-            // 
-            // button1
-            // 
-            button1.AllowDrop = true;
-            button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            button1.BackColor = System.Drawing.Color.Transparent;
-            button1.BackgroundImage = global::RanSanMoiVH.Properties.Resources.trai;
-            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            button1.Location = new System.Drawing.Point(86, 551);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(253, 65);
-            button1.TabIndex = 17;
-            button1.Text = "Back";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DangKy
             // 

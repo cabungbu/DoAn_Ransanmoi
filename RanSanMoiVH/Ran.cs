@@ -60,7 +60,7 @@ namespace RanSanMoi
             /// ve va to mau cho ran
             /// </summary>
             /// <param name="paper"></param>
-            public void DrawSnake(Graphics paper)
+            public virtual void DrawSnake(Graphics paper)
             {
                 foreach (Rectangle rec in snakeRec)
                 {
@@ -71,7 +71,7 @@ namespace RanSanMoi
                 }
             }
             // ve ham di chuyen
-            public void RunSnake()
+            public virtual void RunSnake()
             {
                 for (int i = RanRec.Length - 1; i > 0; i--)
                 {
@@ -79,29 +79,29 @@ namespace RanSanMoi
                 }
             }
             //ran lon
-            public void GrowSnake()
+            public virtual void GrowSnake()
             {
                 List<Rectangle> rec = snakeRec.ToList();
                 rec.Add(new Rectangle(snakeRec[snakeRec.Length - 1].X, snakeRec[snakeRec.Length - 1].Y, width, height));
                 snakeRec = rec.ToArray();
             }
             //ve ham di chuyen
-            public void dichuyenxuong()
+            public virtual void dichuyenxuong()
             {
                 RunSnake();
                 snakeRec[0].Y += 10;
             }
-            public void dichuyenlen()
+            public virtual void dichuyenlen()
             {
                 RunSnake();
                 snakeRec[0].Y -= 10;
             }
-            public void dichuyentrai()
+            public virtual void dichuyentrai()
             {
                 RunSnake();
                 snakeRec[0].X -= 10;
             }
-            public void dichuyenphai()
+            public virtual void dichuyenphai()
             {
                 RunSnake();
                 snakeRec[0].X += 10;

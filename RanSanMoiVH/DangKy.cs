@@ -66,5 +66,10 @@ namespace RanSanMoi
             sign.Show();
             this.Close();
         }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            button5.BackColor = Color.Transparent;
+        }
     }
 }
